@@ -49,6 +49,7 @@ export const DELETE = async (request, { params }) => {
       const deletedPrompt = await Prompt.findByIdAndDelete(params.id);
 
       if (!deletedPrompt) {
+          // Console logging for debugging purposes
           console.log('Prompt not found');
           return new Response("Prompt not found", { status: 404 });
       }
